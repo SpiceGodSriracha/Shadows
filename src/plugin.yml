@@ -1,0 +1,10 @@
+name: Shadows
+main: me.SrirachaMan.Shadows.Shadows
+author: SrirachaMan
+description: Fear the shadows, for there lurks the stalker...
+version: 0.1
+
+commands:
+    shadows:
+       usage: /<command>
+       description: The general command for shadows!

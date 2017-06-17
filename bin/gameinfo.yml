@@ -1,0 +1,11 @@
+games:
+  'example':
+    displayName: 'example'
+    maxPlayers: 8
+    minPlayers: 3
+    isTeamGame: false
+    lobbyLoc: 
+    rareItems: []
+    normalItems: []
+maps:
+   
