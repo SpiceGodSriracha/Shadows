@@ -26,7 +26,7 @@ import me.SrirachaMan.Shadows.Listeners.PlayerDamage;
 import me.SrirachaMan.Shadows.Listeners.PlayerDeath;
 import me.SrirachaMan.Shadows.Listeners.PlayerJoin;
 import me.SrirachaMan.Shadows.Listeners.PlayerLeave;
-import net.minecraft.server.v1_12_R1.WorldGenWoodlandMansionPieces.i;
+import me.SrirachaMan.Shadows.Listeners.inventoryClick;
 
 
 
@@ -106,6 +106,7 @@ public class Shadows extends JavaPlugin{
         getServer().getPluginManager().registerEvents(new EntitySpawn(), this);
         getServer().getPluginManager().registerEvents(new ChestInteract(), this);
         getServer().getPluginManager().registerEvents(new PlayerDamage(), this);
+        getServer().getPluginManager().registerEvents(new inventoryClick(), this);
         getCommand("shadows").setExecutor(new ShadowsCommand());
         
         

@@ -5,12 +5,12 @@ import java.lang.reflect.Field;
 import org.bukkit.Location;
 import org.bukkit.craftbukkit.v1_12_R1.entity.CraftPlayer;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
 
 import me.SrirachaMan.Shadows.Shadows;
 import me.SrirachaMan.Shadows.Utils.ChatUtil;
 import net.minecraft.server.v1_12_R1.IChatBaseComponent;
 import net.minecraft.server.v1_12_R1.IChatBaseComponent.ChatSerializer;
-import net.minecraft.server.v1_12_R1.PacketPlayOutChat;
 import net.minecraft.server.v1_12_R1.PacketPlayOutPlayerListHeaderFooter;
 import net.minecraft.server.v1_12_R1.PacketPlayOutTitle;
 import net.minecraft.server.v1_12_R1.PacketPlayOutTitle.EnumTitleAction;
@@ -49,7 +49,8 @@ public class GamePlayer {
 	}
 	
 	public void sendVoteScreen(){
-		player.openInventory(Shadows.getInstance().getMapInv());
+		Inventory I = Shadows.getInstance().getMapInv();
+		player.openInventory(I);
 	}
 	public GameTeam getTeam(){
 		return team;
@@ -69,7 +70,7 @@ public class GamePlayer {
 		
 	}
 	public void clearMark(){
-		isStalker = false;
+		this.isStalker = false;
 	}
 	
 	public void sendMessage(String msg){

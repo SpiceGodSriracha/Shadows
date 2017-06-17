@@ -20,7 +20,7 @@ public class PlayerDamage implements Listener{
 			Game g = Shadows.getInstance().getGame(p);
 			
 			if(g != null){
-				if(g.isState(GameState.ENDING) || g.isState(GameState.LOBBY) || g.isState(GameState.STARTING) ||  g.isState(GameState.PREPERATION) ){
+				if(g.isState(GameState.ENDING) || g.isState(GameState.LOBBY) || g.isState(GameState.STARTING) ||  g.isState(GameState.PREPERATION) ||  g.isState(GameState.VOTING) ){
 					e.setCancelled(true);
 				}
 			}else{

@@ -14,13 +14,16 @@ public class inventoryClick implements Listener{
 	
 	@EventHandler
 	public void onInventoryClick(InventoryClickEvent e){
-		if(e.getWhoClicked() instanceof Player){
 			Player p = (Player)e.getWhoClicked();
+			Shadows.getInstance().getLogger().warning("!!!!!");
 			if(Shadows.getInstance().getGame(p) != null && Shadows.getInstance().getGame(p).isState(GameState.VOTING)){
 				Game game = Shadows.getInstance().getGame(p);
-			if(game.isState(GameState.VOTING) && e.getClickedInventory().getName().contains("1Voting")){
+				Shadows.getInstance().getLogger().warning("!!!!!");
+			if(game.isState(GameState.VOTING) && e.getClickedInventory().getName().contains("voting")){
+				Shadows.getInstance().getLogger().warning("!!!!!");
 				for(gameMap m:Shadows.getInstance().getMaps()){
 					if(e.getCurrentItem().getType() == m.getVoteItem().getType() && !game.getGamePlayer(p).hasVoted()){
+						Shadows.getInstance().getLogger().warning("!!!!!");
 					p.closeInventory();
 					m.vote();
 					p.sendMessage("You voted for " + m.getName() + "!");
@@ -29,7 +32,7 @@ public class inventoryClick implements Listener{
 						game.setActiveMap(m.getName());
 						game.setVoted(true);
 					}
-					}
+					
 				}
 			}
 			}

@@ -391,7 +391,7 @@ public class Game {
 			gp.getPlayer().removePotionEffect(PotionEffectType.INVISIBILITY);
 			gp.setVoted(false);
 			if(gp.isStalker()){
-				gp.clearMark();
+				gp.clearMark();;
 			}
 		}
 		rollBack();
@@ -519,6 +519,7 @@ public class Game {
 			}
 			id ++;
 		}
+		id =0;
 	}
 	
 	public enum GameState{
